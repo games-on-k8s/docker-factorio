@@ -63,7 +63,7 @@ Check supplied Username and Password for mistakes.
 
 For maintainers with write access to Quay, here's how to cut a new release:
 ```
-./download_release.sh 0.14.15
+./make_release.sh 0.14.15
 ```
 This will download the correct archive, build a Docker image, and run it locally. Test against the built image, then CTRL+C out of the server. The script will prompt you through the rest of the release process.
 
