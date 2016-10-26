@@ -16,7 +16,7 @@ CONFIGS = {
     },
     'visibility': {
         'evar': 'FACTORIO_VISIBILITY',
-        'default': 'hidden',
+        'default': 'lan',
     },
     'username': {
         'evar': 'FACTORIO_USER_USERNAME',
