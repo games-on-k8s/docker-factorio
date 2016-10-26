@@ -14,9 +14,17 @@ CONFIGS = {
         'evar': 'FACTORIO_MAX_PLAYERS',
         'default': 0,
     },
-    'visibility': {
-        'evar': 'FACTORIO_VISIBILITY',
-        'default': 'lan',
+    # Hack workaround for visibility being a JSON dict in the config.
+    'public': {
+        'nest_under': 'visibility',
+        'evar': 'FACTORIO_IS_PUBLIC',
+        'default': 'false',
+    },
+    # Ditto.
+    'lan': {
+        'nest_under': 'visibility',
+        'evar': 'FACTORIO_PUBLISH_ON_LAN',
+        'default': 'true',
     },
     'username': {
         'evar': 'FACTORIO_USER_USERNAME',
@@ -96,7 +104,13 @@ def get_and_validate_vals():
         elif conf_type == 'list':
             conf_value = conf_value.split()
 
-        conf[conf_name] = conf_value
+        if 'nest_under' in conf_details:
+            nest_under = conf_details['nest_under']
+            if nest_under not in conf:
+                conf[nest_under] = {}
+            conf[nest_under][conf_name] = conf_value
+        else:
+            conf[conf_name] = conf_value
 
     return conf
 

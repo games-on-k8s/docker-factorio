@@ -27,8 +27,9 @@ This Docker image uses environment variables to configure the Factorio server. T
 | **FACTORIO_SERVER_NAME**             | The name to show in-game and in the server browser (if public).  
 | **FACTORIO_DESCRIPTION**             | Server description for the server browser (if public).       
 | **FACTORIO_MAX_PLAYERS**             | Maximum number of players allowed, admins can join even a full server. 0 means unlimited.      
-| FACTORIO_VISIBILITY              | One of `public` (published on Factorio match-making server, `lan` broadcast on LAN, `hidden` not shown anywhere. Default is `hidden`.
-| FACTORIO_USER_USERNAME           | If visibility is public, a Factorio username to auth the server with.
+| FACTORIO_PUBLISH_ON_LAN               | If `true`, make this game available on the server's LAN. Defaults to `true`.
+| FACTORIO_IS_PUBLIC               | If `true`, advertise this server on the Factorio game browser. You'll also need to set FACTORIO_USER_USERNAME and FACTORIO_USER_PASSWORD. Defaults to `false`.
+| FACTORIO_USER_USERNAME           | If this server is public, a Factorio username to auth the server with.
 | FACTORIO_USER_PASSWORD           | The Factorio user's matching password.
 | FACTORIO_GAME_PASSWORD           | If set, this password will be required to join.
 | FACTORIO_REQUIRE_USER_VERIFICATION | When set to true, the server will only allow clients that have a valid Factorio.com account
