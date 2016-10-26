@@ -49,11 +49,12 @@ cd /opt/factorio/saves
 save_dir="/opt/factorio/saves"
 if [ -z $FACTORIO_SAVE ]
 then
-  if [ "$(ls -A ${save_dir})" ]
+  if [ "$(ls --hide=lost\+found ${save_dir})" ]
   then
     echo "###"
     echo "# Taking latest save"
     echo "###"
+    ls -l --hide=lost\+found ${save_dir}
   else
     echo "###"
     echo "# Creating a new map [save.zip]"
