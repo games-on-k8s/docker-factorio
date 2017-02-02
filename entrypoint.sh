@@ -26,6 +26,12 @@ echo "# Generated server-settings.json"
 echo "###"
 cat ${SERVER_SETTINGS}
 
+FACTORIO_PORT=${FACTORIO_PORT:-34197}
+factorio_command="$factorio_command --port ${FACTORIO_PORT}"
+echo "###"
+echo "# Game server port is '${FACTORIO_PORT}'"
+echo "###"
+
 if [ -z $FACTORIO_RCON_PORT ]
 then
   factorio_command="$factorio_command --rcon-port ${FACTORIO_RCON_PORT:-27015}"
