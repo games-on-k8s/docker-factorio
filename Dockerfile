@@ -4,7 +4,8 @@ MAINTAINER Greg Taylor <gtaylor@gc-taylor.com>
 ARG factorio_version
 ENV VERSION $factorio_version
 
-RUN apt update && apt install -y python3
+RUN apt-get update && apt-get dist-upgrade -y && \
+    apt install -y python3 && apt-get clean
 
 WORKDIR /opt
 
