@@ -1,12 +1,12 @@
 version: '2'
 services:
   factorio:
-    image: 'games_on_k8s/factorio:latest'
+    image: 'quay.io/games_on_k8s/factorio:0.14.22'
     volumes: 
        - 'factorio_saves:/opt/factorio/saves'
        - 'factorio_mods:/opt/factorio/mods'
     ports:
-      - '34197:34197'
+      - '34197/udp:34197/udp'
       - '27015:27015'
 volumes:
   factorio_saves:
