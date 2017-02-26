@@ -1,0 +1,15 @@
+version: '2'
+services:
+  factorio:
+    image: 'games_on_k8s/factorio:latest'
+    volumes: 
+       - 'factorio_saves:/opt/factorio/saves'
+       - 'factorio_mods:/opt/factorio/mods'
+    ports:
+      - '34197:34197'
+      - '27015:27015'
+volumes:
+  factorio_saves:
+    driver: local
+  factorio_mods:
+    driver: local
