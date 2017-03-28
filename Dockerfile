@@ -9,13 +9,10 @@ RUN apt-get update && apt-get dist-upgrade -y && \
 
 WORKDIR /opt
 
-COPY entrypoint.sh gen_config.py factorio.crt /opt/
-COPY factorio_headless_x64_$VERSION.tar.gz /tmp/factorio_headless.tar.gz
+COPY entrypoint.sh gen_config.py factorio.crt /opt
+ADD factorio_headless_x64_$VERSION.tar.gz /tmp
 
 VOLUME /opt/factorio/saves /opt/factorio/mods
-
-RUN tar xzf /tmp/factorio_headless.tar.gz && \
-    rm /tmp/factorio_headless.tar.gz
 
 EXPOSE 34197/udp
 EXPOSE 27015/tcp
