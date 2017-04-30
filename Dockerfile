@@ -1,13 +1,13 @@
 FROM ubuntu:16.04
 MAINTAINER Greg Taylor <gtaylor@gc-taylor.com>
 
-ARG factorio_version
-ENV VERSION $factorio_version
-
 RUN apt-get update && apt-get dist-upgrade -y && \
     apt install -y python3 xz-utils && apt-get clean
 
 WORKDIR /opt
+
+ARG factorio_version
+ENV VERSION $factorio_version
 
 COPY entrypoint.sh gen_config.py factorio.crt /opt/
 COPY factorio_headless_x64_$VERSION.tar.xz /tmp/factorio_headless.tar.xz
