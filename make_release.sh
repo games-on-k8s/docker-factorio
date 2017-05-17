@@ -10,7 +10,7 @@ then
     exit 1
 fi
 
-LOCAL_FILENAME=factorio_headless_x64_${VERSION}.tar.gz
+LOCAL_FILENAME=factorio_headless_x64_${VERSION}.tar.xz
 DOWNLOAD_URL=https://www.factorio.com/get-download/${VERSION}/headless/linux64
 
 # Attempt to grab the requested release.
