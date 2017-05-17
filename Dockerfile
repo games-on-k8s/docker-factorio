@@ -2,7 +2,7 @@ FROM ubuntu:16.04
 MAINTAINER Greg Taylor <gtaylor@gc-taylor.com>
 
 RUN apt-get update && apt-get dist-upgrade -y && \
-    apt install -y python3 && apt-get clean
+    apt-get install -y python3 && apt-get clean
 
 WORKDIR /opt
 
