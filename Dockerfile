@@ -9,8 +9,8 @@ RUN apt-get update && apt-get dist-upgrade -y && \
 
 WORKDIR /opt
 
-COPY entrypoint.sh gen_config.py factorio.crt /opt
-ADD factorio_headless_x64_$VERSION.tar.gz /tmp
+COPY entrypoint.sh gen_config.py factorio.crt /opt/
+ADD factorio_headless_x64_$VERSION.tar.gz /tmp/
 
 VOLUME /opt/factorio/saves /opt/factorio/mods
 
