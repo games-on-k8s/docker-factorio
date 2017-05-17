@@ -5,7 +5,7 @@ ARG factorio_version
 ENV VERSION $factorio_version
 
 RUN apt-get update && apt-get dist-upgrade -y && \
-    apt-get install python3 && apt-get clean
+    apt-get install python3 xz-utils -y && apt-get clean
 
 WORKDIR /opt
 
