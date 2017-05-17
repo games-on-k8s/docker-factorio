@@ -5,7 +5,7 @@ ARG factorio_version
 ENV VERSION $factorio_version
 
 RUN apt-get update && apt-get dist-upgrade -y && \
-    apt install -y python3 && apt-get clean
+    apt-get install python3 && apt-get clean
 
 WORKDIR /opt
 
