@@ -6,7 +6,7 @@ if [ -z ${VERSION} ]
 then
     echo "Packages an arbitrary Factorio release."
     echo
-    echo "Usage: ./download_release.sh 0.14.15"
+    echo "Usage: ./make_release.sh 0.14.15"
     exit 1
 fi
 
