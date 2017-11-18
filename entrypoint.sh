@@ -32,22 +32,20 @@ echo "###"
 echo "# Game server port is '${FACTORIO_PORT}'"
 echo "###"
 
-if [ -z $FACTORIO_RCON_PORT ]
-then
-  factorio_command="$factorio_command --rcon-port ${FACTORIO_RCON_PORT:-27015}"
-  echo "###"
-  echo "# RCON port is '${FACTORIO_RCON_PORT}'"
-  echo "###"
-fi
+factorio_command="$factorio_command --rcon-port ${FACTORIO_RCON_PORT:-27015}"
+echo "###"
+echo "# RCON port is '${FACTORIO_RCON_PORT}'"
+echo "###"
 
 if [ -z $FACTORIO_RCON_PASSWORD ]
 then
   FACTORIO_RCON_PASSWORD=$(cat /dev/urandom | tr -dc 'a-f0-9' | head -c16)
-  echo "###"
-  echo "# RCON password is '${FACTORIO_RCON_PASSWORD}'"
-  echo "###"
-  factorio_command="${factorio_command} --rcon-password ${FACTORIO_RCON_PASSWORD}"
 fi
+
+echo "###"
+echo "# RCON password is '${FACTORIO_RCON_PASSWORD}'"
+echo "###"
+factorio_command="${factorio_command} --rcon-password ${FACTORIO_RCON_PASSWORD}"
 
 # TODO Adding this because of bug, will need to be removed once bug in factorio is fixed
 cd /opt/factorio/saves
