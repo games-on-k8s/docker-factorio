@@ -32,7 +32,7 @@ echo "###"
 echo "# Game server port is '${FACTORIO_PORT}'"
 echo "###"
 
-FACTORIO_PORT=${FACTORIO_RCON_PORT:-27015}
+FACTORIO_RCON_PORT=${FACTORIO_RCON_PORT:-27015}
 factorio_command="$factorio_command --rcon-port ${FACTORIO_RCON_PORT}"
 echo "###"
 echo "# RCON port is '${FACTORIO_RCON_PORT}'"
