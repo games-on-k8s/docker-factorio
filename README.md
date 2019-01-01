@@ -42,7 +42,7 @@ This Docker image uses environment variables to configure the Factorio server. T
 | FACTORIO_AUTO_PAUSE              | Whether should the server be paused when no players are present. `true` (default) or `false`.
 | FACTORIO_ONLY_ADMINS_PAUSE       | Only allow admins to pause the game if `true` (default), `false` allows everyone.
 | FACTORIO_AUTOSAVE_ONLY_ON_SERVER | Whether autosaves should be saved only on server or also on all connected clients. `true` (default) or `false`.
-| FACTORIO_ADMINS                  | A commaa-separated list of usernames who are set as admins.
+| FACTORIO_ADMINS                  | A comma-separated list of usernames who are set as admins.
 | FACTORIO_PORT                    | Port number to run game server on. Default is 34197.
 | FACTORIO_RCON_PORT               | Port number to run RCON on. Default is 27015.
 | FACTORIO_RCON_PASSWORD           | The password to use for RCON. Omitting this will cause one to be auto-generated and emitted to stdout.
