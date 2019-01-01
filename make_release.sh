@@ -14,7 +14,7 @@ LOCAL_FILENAME=factorio_headless_x64_${VERSION}.tar.xz
 DOWNLOAD_URL=https://www.factorio.com/get-download/${VERSION}/headless/linux64
 
 # Attempt to grab the requested release.
-wget  ${DOWNLOAD_URL} -O ${LOCAL_FILENAME} || rm -f ${LOCAL_FILENAME}
+wget ${DOWNLOAD_URL} -O ${LOCAL_FILENAME} || rm -f ${LOCAL_FILENAME}
 
 if [ $? -ne 0 ]
 then
